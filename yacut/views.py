@@ -4,8 +4,9 @@ from yacut import app
 
 
 @app.route('/')
-def index_view():
+def index():
     return render_template('index.html')
+
 
 if __name__ == '__main__':
     app.run()
