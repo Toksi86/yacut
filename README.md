@@ -35,3 +35,11 @@ python3 -m pip install --upgrade pip
 ```
 pip install -r requirements.txt
 ```
+
+Создать файл .env
+```
+FLASK_APP=app_name
+FLASK_ENV=environment_status
+DATABASE_URI=db_info
+SECRET_KEY=SecretKey
+```
