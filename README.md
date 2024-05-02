@@ -36,7 +36,7 @@ python3 -m pip install --upgrade pip
 pip install -r requirements.txt
 ```
 
-Создать файл .env
+Создать файл .env по примеру .env_example
 ```
 FLASK_APP=app_name
 FLASK_ENV=environment_status
