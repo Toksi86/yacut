@@ -1,16 +1,17 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, SubmitField
-from wtforms.validators import DataRequired, Length
+from wtforms import SubmitField, URLField
+from wtforms.validators import DataRequired, Length, Optional
 
 
 class UrlForm(FlaskForm):
-    original_link = StringField(
-        'Введите название фильма',
+    original_link = URLField(
+        'Длинная ссылка',
         validators=[DataRequired(message='Обязательное поле'),
-                    Length(1, 128)]
+                    Length(1, 256)]
     )
-    custom_id = StringField(
-        'Введите название фильма'
+    custom_id = URLField(
+        'Ваш вариант короткой ссылки',
+        validators=[Length(1, 16), Optional()]
     )
 
     submit = SubmitField('Добавить')
