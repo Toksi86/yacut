@@ -2,7 +2,7 @@ from flask_wtf import FlaskForm
 from wtforms import SubmitField, URLField, StringField
 from wtforms.validators import DataRequired, Length, URL, Regexp
 
-from .constants import REGEXP_FOR_VALID_CHARACTERS
+from .constants import REGEXP_FOR_VALID_CHARACTERS, SHORT_ID_LENGTH
 
 
 class UrlForm(FlaskForm):
@@ -17,7 +17,7 @@ class UrlForm(FlaskForm):
         'Ваш вариант короткой ссылки',
         validators=(
             Length(
-                max=16,
+                max=SHORT_ID_LENGTH,
                 message="Длина поля не должна превышать 16 символов.",
             ),
             Regexp(

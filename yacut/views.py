@@ -59,7 +59,3 @@ def redirect_to_url_view(short):
     """
     url = URLMap.query.filter_by(short=short).first_or_404()
     return redirect(url.original)
-
-
-if __name__ == '__main__':
-    app.run()

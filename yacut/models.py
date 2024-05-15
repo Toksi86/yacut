@@ -15,7 +15,9 @@ class URLMap(db.Model):
     timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow())
 
     def to_dict(self):
-        return dict(url=self.original, short_link=f'{BASE_URL}{self.short}')
+        return {'url': self.original,
+                'short_link': f'{BASE_URL}{self.short}'
+                }
 
     @staticmethod
     def generating_unique_short_id(short_id_length):

@@ -18,7 +18,7 @@ class InvalidAPIUsage(Exception):
 
     def to_dict(self):
         """Преобразует информацию об исключении в словарь."""
-        return dict(message=self.message)
+        return {'message': self.message}
 
 
 @app.errorhandler(InvalidAPIUsage)
